@@ -2,6 +2,7 @@ package fr.pizzeria.ihm;
 
 import java.util.Scanner;
 
+import fr.pizzeria.dao.pizza.IPizzaDao;
 import fr.pizzeria.exception.SavePizzaException;
 import fr.pizzeria.model.CategoriePizza;
 import fr.pizzeria.model.Pizza;
@@ -18,7 +19,7 @@ public class NouvellePizzaOptionMenu extends OptionMenu{
 	@Override
 	public boolean execute() {
 		
-		System.out.println("********Ajout d’une nouvelle pizza***********");
+		System.out.println("********Ajout d'une nouvelle pizza***********");
 		System.out.println("Veuillez saisir le code");
 		Scanner scan1=new Scanner(System.in); 
 		String codePizza = scan1.nextLine();

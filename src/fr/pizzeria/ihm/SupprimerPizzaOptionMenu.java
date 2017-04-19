@@ -2,6 +2,7 @@ package fr.pizzeria.ihm;
 
 import java.util.Scanner;
 
+import fr.pizzeria.dao.pizza.IPizzaDao;
 import fr.pizzeria.exception.DeletePizzaException;
 import fr.pizzeria.model.Pizza;
 
@@ -14,8 +15,8 @@ public class SupprimerPizzaOptionMenu extends OptionMenu{
 	}
 	
 	@Override
-	public boolean execute() { //L'utilisateur rentre de code de la pizza à modifier
-		System.out.println("Selectionner le code de la pizza à supprimer... ");
+	public boolean execute() { //L'utilisateur rentre de code de la pizza ï¿½ modifier
+		System.out.println("Selectionner le code de la pizza ï¿½ supprimer... ");
 		Scanner scan4=new Scanner(System.in); 
 		String codePizza = scan4.nextLine();
 		

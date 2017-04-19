@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import fr.pizzeria.dao.pizza.IPizzaDao;
 import fr.pizzeria.model.Pizza;
 
 public class Menu {
@@ -30,7 +31,7 @@ public class Menu {
 		listeOptions.put(2,new NouvellePizzaOptionMenu(pizzaDaoMenu));
 		listeOptions.put(3,new ModifierPizzaOptionMenu(pizzaDaoMenu));
 		listeOptions.put(4,new SupprimerPizzaOptionMenu(pizzaDaoMenu));
-		listeOptions.put(5,new ListerClientOptionMenu(pizzaDaoMenu));
+//		listeOptions.put(5,new ListerClientOptionMenu(pizzaDaoMenu));
 	}
 	
 	public void afficher(){

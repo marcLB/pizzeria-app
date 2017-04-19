@@ -1,5 +1,6 @@
 package fr.pizzeria.ihm;
 
+import fr.pizzeria.dao.pizza.IPizzaDao;
 import fr.pizzeria.model.Pizza;
 
 public class ListerPizzaOptionMenu extends OptionMenu{

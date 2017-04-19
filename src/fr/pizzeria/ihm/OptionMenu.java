@@ -1,5 +1,7 @@
 package fr.pizzeria.ihm;
 
+import fr.pizzeria.dao.pizza.IPizzaDao;
+
 public abstract class OptionMenu {
 
 	protected IPizzaDao pizzaDao;
