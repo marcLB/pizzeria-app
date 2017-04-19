@@ -25,10 +25,10 @@ public class PizzeriaAdminConsoleApp {
 //		IPizzaDao pizzaDao=new PizzaDaoImplTableau();
 	
 		Menu menu = new Menu(daoFactory.getPizzaDao());
+		
 		menu.choixUtilisateur(); //Gestion de la réponse utilisateur 
 	} 
 }
-
 
 
 

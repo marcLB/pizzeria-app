@@ -7,6 +7,7 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
+import fr.pizzeria.dao.pizza.PizzaDaoImplTableau;
 import fr.pizzeria.model.Pizza;
 
 public class PizzaDaoImplTableauTest {
@@ -20,6 +21,4 @@ public class PizzaDaoImplTableauTest {
 		Assert.assertNotNull(resultat);
 		Assert.assertTrue("La liste devrait être vide", !resultat.isEmpty());
 	}
-	
-	
 }
