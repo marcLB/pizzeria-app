@@ -12,12 +12,14 @@ import fr.pizzeria.dao.pizza.PizzaDaoImplFichier;
 import fr.pizzeria.ihm.Menu;
 import fr.pizzeria.ihm.OptionMenu;
 import fr.pizzeria.model.Pizza;
+import com.github.lalyos.jfiglet.FigletFont;
 
 public class PizzeriaAdminConsoleApp {
 	
 	
 	public static void main(String[] args) {
-		
+		String asciiArt = FigletFont.convertOneLine("Pizzeria App");
+		System.out.println(asciiArt);
 		DaoFactory daoFactory = new DaoFichierFactory();
 		
 //		PizzaDaoImplFichier pizzaDaoImplFichier= new PizzaDaoImplFichier("data");
