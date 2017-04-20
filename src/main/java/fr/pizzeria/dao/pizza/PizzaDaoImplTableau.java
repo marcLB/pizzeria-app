@@ -28,10 +28,7 @@ public class PizzaDaoImplTableau implements IPizzaDao{
 	
 	//METHODES
 	@Override
-	public List<Pizza> findAllPizzas() {
-		for(int i=0;i<listePizza.size();i++){
-			listePizza.get(i).toString();
-		}
+	public List<Pizza> findAllPizzas() {	
 		return listePizza;
 	}
 

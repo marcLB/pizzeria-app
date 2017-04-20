@@ -18,18 +18,25 @@ public class PizzeriaAdminConsoleApp {
 	
 	
 	public static void main(String[] args) {
-		String asciiArt = FigletFont.convertOneLine("Pizzeria App");
-		System.out.println(asciiArt);
-		DaoFactory daoFactory = new DaoFichierFactory();
+		String asciiArt = FigletFont.convertOneLine("-------------------");
+		String asciiArt1 = FigletFont.convertOneLine("-- Pizzeria App --");
+		String asciiArt2 = FigletFont.convertOneLine("-------------------");
+		//System.out.println(asciiArt);
+		System.out.println(asciiArt1);
+		//System.out.println(asciiArt2);
+		
+		
+		DaoFactory daoFactoryFichier = new DaoFichierFactory();
+		DaoFactory daoFactoryMemoire = new DaoMemoireFactory();
+		
 		
 //		PizzaDaoImplFichier pizzaDaoImplFichier= new PizzaDaoImplFichier("data");
 //		List<Pizza> listePizza = pizzaDaoImplFichier.findAllPizzas();
 //		IPizzaDao pizzaDao=new PizzaDaoImplTableau();
 	
-		Menu menu = new Menu(daoFactory.getPizzaDao());
-		
+		Menu menu = new Menu(daoFactoryFichier.getPizzaDao());
 		menu.choixUtilisateur(); //Gestion de la réponse utilisateur 
-	} 
+	}
 }
 
 

@@ -41,7 +41,7 @@ public class Pizza {
 		} catch (Exception e) {
 			throw new RuntimeException("Illegal acces");
 		}
-		System.out.println(code+" -> "+nom+" de la catÈgorie "+categoriePizza+" ("+prix+"Ä)");
+		System.out.println(code+" -> "+nom+" de la cat√©gorie "+categoriePizza+" ("+prix+"‚Ç¨)");
 		return chaine;
 	}
 	
