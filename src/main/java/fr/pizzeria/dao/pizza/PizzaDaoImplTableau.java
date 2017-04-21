@@ -8,23 +8,30 @@ import fr.pizzeria.exception.DeletePizzaException;
 import fr.pizzeria.exception.SavePizzaException;
 import fr.pizzeria.exception.UpdatePizzaException;
 import fr.pizzeria.model.CategoriePizza;
+import fr.pizzeria.model.Client;
 import fr.pizzeria.model.Pizza;
 
 public class PizzaDaoImplTableau implements IPizzaDao{
-	//Pizza[] listePizza=new Pizza[50];
+	
 	protected List<Pizza> listePizza= new ArrayList<Pizza>();
+	protected List<Client> listeClient= new ArrayList<Client>();
 	//CONSTRUCT 
 	public PizzaDaoImplTableau() {
 		super();
-		listePizza.add(new Pizza(0,"PEP","Pépéroni",12.50,CategoriePizza.VIANDE));
-		listePizza.add(new Pizza(1,"MAR","Margherita",14.00,CategoriePizza.VIANDE));
-		listePizza.add(new Pizza(2,"REI","La Reine",11.50,CategoriePizza.VIANDE));
-		listePizza.add(new Pizza(3,"FRO","La 4 Fromages",12.00,CategoriePizza.SANS_VIANDE));
-		listePizza.add(new Pizza(4,"CAN","La cannibale",12.50,CategoriePizza.VIANDE));
-		listePizza.add(new Pizza(5,"SAV","La savoyarde",13.00,CategoriePizza.VIANDE));
-		listePizza.add(new Pizza(6,"ORI","L'orientale",13.50,CategoriePizza.VIANDE));
-		listePizza.add(new Pizza(7,"IND","L'indienne",14.00,CategoriePizza.VIANDE));
+		listePizza.add(new Pizza("PEP","Pépéroni",12.50,CategoriePizza.VIANDE));
+		listePizza.add(new Pizza("MAR","Margherita",14.00,CategoriePizza.VIANDE));
+		listePizza.add(new Pizza("REI","La Reine",11.50,CategoriePizza.VIANDE));
+		listePizza.add(new Pizza("FRO","La 4 Fromages",12.00,CategoriePizza.SANS_VIANDE));
+		listePizza.add(new Pizza("CAN","La cannibale",12.50,CategoriePizza.VIANDE));
+		listePizza.add(new Pizza("SAV","La savoyarde",13.00,CategoriePizza.VIANDE));
+		listePizza.add(new Pizza("ORI","L'orientale",13.50,CategoriePizza.VIANDE));
+		listePizza.add(new Pizza("IND","L'indienne",14.00,CategoriePizza.VIANDE));
+
+		listeClient.add(new Client(0,"LE BOULCH","Marc",800));
+		listeClient.add(new Client(1,"LAVAUD","Franc",2));
 	}
+	
+	
 	
 	//METHODES
 	@Override
@@ -40,9 +47,6 @@ public class PizzaDaoImplTableau implements IPizzaDao{
 			throw new SavePizzaException("Code pizza déjà dans le menu..");
 		}
 		
-		int nbPizza=listePizza.size();
-		pizza.setId(nbPizza);
-		
 		listePizza.add(pizza);
 		return true;
 	}
@@ -56,20 +60,7 @@ public class PizzaDaoImplTableau implements IPizzaDao{
 			throw new UpdatePizzaException("Code non trouvé..");
 		}
 		
-		System.out.println("Veuillez saisir le nouveau code");
-		Scanner scan1=new Scanner(System.in); 
-		String nouveauCode= scan1.nextLine();
-		System.out.println("Veuillez saisir le nouveau nom");
-		Scanner scan2=new Scanner(System.in);
-		String nouveauNom= scan2.nextLine();
-		System.out.println("Veuillez saisir le nouveau prix");
-		Scanner scan3=new Scanner(System.in);
-		double nouveauPrix= scan3.nextDouble();
-		
-		listePizza.get(index).setCode(nouveauCode);
-		listePizza.get(index).setId(index);
-		listePizza.get(index).setNom(nouveauNom);
-		listePizza.get(index).setPrix(nouveauPrix);
+		listePizza.set(index,pizza);
 		
 		return true;
 		
@@ -95,14 +86,16 @@ public class PizzaDaoImplTableau implements IPizzaDao{
 		return -1;
 	}
 
- 	private int tailleTab(Pizza[] tableau) {//Retourne le nombre de pizza dans le tableau
-		int i=0;
-		while(tableau[i]!=null){
-			i++;
-		}
-		return i;
-	}
-
+ 	@Override
+ 	public List<Client> findAllClients() {
+ 		return listeClient;
+ 	}
+ 	
+ 	@Override
+ 	public boolean saveNewClient(Client client) {
+ 		listeClient.add(client);
+ 		return false;
+ 	}
 	
 	
 	
@@ -113,5 +106,6 @@ public class PizzaDaoImplTableau implements IPizzaDao{
 	public void setListePizza(List<Pizza> listePizza) {
 		this.listePizza = listePizza;
 	}
+
 
 }

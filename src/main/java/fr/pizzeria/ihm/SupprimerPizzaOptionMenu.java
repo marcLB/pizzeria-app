@@ -10,13 +10,12 @@ public class SupprimerPizzaOptionMenu extends OptionMenu{
 
 	public SupprimerPizzaOptionMenu(IPizzaDao pizzaDao){
 		super(pizzaDao);
-
 		this.libelle="4. Supprimer Pizza";	
 	}
 	
 	@Override
 	public boolean execute() { //L'utilisateur rentre de code de la pizza � modifier
-		System.out.println("Selectionner le code de la pizza � supprimer... ");
+		System.out.println("Selectionner le code de la pizza à supprimer... ");
 		Scanner scan4=new Scanner(System.in); 
 		String codePizza = scan4.nextLine();
 		

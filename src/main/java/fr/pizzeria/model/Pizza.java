@@ -3,7 +3,7 @@ package fr.pizzeria.model;
 import java.lang.reflect.Field;
 
 public class Pizza {
-	private int id;
+	
 	
 	@ToString(toUppercase=true)
 	private String nom;
@@ -15,9 +15,8 @@ public class Pizza {
 	private CategoriePizza categoriePizza;
 	
 	
-	public Pizza(int id, String code, String nom, double prix,CategoriePizza categorierPizza) {
+	public Pizza(String code, String nom, double prix,CategoriePizza categorierPizza) {
 		super();
-		this.setId(id);
 		this.nom = nom;
 		this.code = code;
 		this.prix = prix;
@@ -49,12 +48,7 @@ public class Pizza {
 	
 	
 	// GETTERS SETTERS
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
 
 	public String getNom() {
 		return nom;

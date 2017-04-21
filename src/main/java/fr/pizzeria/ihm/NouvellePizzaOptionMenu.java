@@ -23,14 +23,14 @@ public class NouvellePizzaOptionMenu extends OptionMenu{
 		System.out.println("Veuillez saisir le code");
 		Scanner scan1=new Scanner(System.in); 
 		String codePizza = scan1.nextLine();
-		System.out.println("Veuillez saisir le nom (sans espace)");
+		System.out.println("Veuillez saisir le nom");
 		Scanner scan2=new Scanner(System.in);
 		String nomPizza = scan2.nextLine();
 		System.out.println("Veuillez saisir le prix");
 		Scanner scan3=new Scanner(System.in);
 		double prixPizza = scan3.nextDouble();
 		
-		nouvellePizza=new Pizza(0,codePizza,nomPizza,prixPizza,CategoriePizza.SANS_CATEGORIE);
+		nouvellePizza=new Pizza(codePizza,nomPizza,prixPizza,CategoriePizza.SANS_CATEGORIE);
 		
 		try {
 			this.pizzaDao.saveNewPizza(nouvellePizza);

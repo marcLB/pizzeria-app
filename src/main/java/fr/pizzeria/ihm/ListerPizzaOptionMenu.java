@@ -22,9 +22,6 @@ public class ListerPizzaOptionMenu extends OptionMenu{
 		for(int i=0;i<listePizza.size();i++){
 			listePizza.get(i).toString();
 		}
-		
-		
-		//System.out.println(listePizza.get(0).toString());
 		return true;
 	}
 

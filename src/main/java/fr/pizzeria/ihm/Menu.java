@@ -31,7 +31,12 @@ public class Menu {
 		listeOptions.put(2,new NouvellePizzaOptionMenu(pizzaDaoMenu));
 		listeOptions.put(3,new ModifierPizzaOptionMenu(pizzaDaoMenu));
 		listeOptions.put(4,new SupprimerPizzaOptionMenu(pizzaDaoMenu));
-//		listeOptions.put(5,new ListerClientOptionMenu(pizzaDaoMenu));
+		listeOptions.put(5,new ListerClientOptionMenu(pizzaDaoMenu));
+		listeOptions.put(6,new AjouterClientOptionMenu(pizzaDaoMenu));
+		listeOptions.put(7,new CrediterClientOptionMenu(pizzaDaoMenu));
+//		listeOptions.put(8,new DebiterClientOptionMenu());
+//		listeOptions.put(9,new ListerLivreurOptionMenu());
+//		listeOptions.put(10,new AfficherStatsCompteOptionMenu());
 	}
 	
 	public void afficher(){

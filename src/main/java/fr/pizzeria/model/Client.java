@@ -1,7 +1,6 @@
 package fr.pizzeria.model;
 
 public class Client {
-
 	private int id;
 	private String nom;
 	private String prenom;
@@ -9,14 +8,12 @@ public class Client {
 	
 	
 	//CONSTRUCT
-	public void Client(int id,String nom,String prenom,double solde){
+	public Client(int id,String nom,String prenom,double solde){
 		this.id=id;
 		this.nom=nom;
 		this.prenom=prenom;
 		this.solde=solde;
 	}
-	
-	
 	
 	
 	//METHODES
@@ -37,19 +34,8 @@ public class Client {
 	}
 	
 	public String toString(){
-		
-		return "";
+		return id+" -> "+prenom+" "+nom+" ("+solde+"€ )";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	// GETTERS SETTERS
 	public int getId() {
@@ -76,6 +62,4 @@ public class Client {
 	public void setSolde(double solde) {
 		this.solde = solde;
 	}
-	
-	
 }
