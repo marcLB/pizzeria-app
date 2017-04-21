@@ -13,5 +13,4 @@ public class DaoFichierFactory implements DaoFactory{
 	public IPizzaDao getPizzaDao() {
 		return pizzaDao;
 	}
-
 }

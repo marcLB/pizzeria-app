@@ -7,6 +7,22 @@
     <artifactId>pizzeria-app</artifactId>
     <version>1.0.0</version>
   </parent>
+  <build>
+		<pluginManagement>
+			<plugins>
+  				<plugin>
+					<artifactId>maven-jar-plugin</artifactId>
+					<configuration>
+						<archive>
+							<manifest>
+								<mainClass>fr.pizzeria.console.PizzeriaAdminConsoleApp</mainClass>
+							</manifest>
+						</archive>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+  </build>
   <groupId>dta</groupId>
   <artifactId>pizzeria-console</artifactId>
   <version>1.0.0</version>
