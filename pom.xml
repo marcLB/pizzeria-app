@@ -9,24 +9,27 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>dta</groupId>
-
     <artifactId>pizzeria-app</artifactId>
-
+	<packaging>pom</packaging>
     <version>1.0.0</version>
+
 	<properties>
 		<java.version>8</java.version>
 		<junit.version>4.12</junit.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-    <build>
 
+	
+	
+
+    <build>
 		<finalName>pizzeria-app</finalName>
         <pluginManagement>
 
+
+
         <plugins>
-
             <plugin>
-
             <artifactId>maven-compiler-plugin</artifactId>
 
             <configuration>
@@ -106,4 +109,40 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 		</dependency>
     </dependencies>
 
+    <modules>
+    	<module>pizzeria-console</module>
+    	<module>model</module>
+    	<module>dao-api</module>
+    	<module>dao-fichier</module>
+    	<module>dao-memoire</module>
+    </modules>
+    <dependencyManagement>
+    	<dependencies>
+    		<dependency>
+    			<groupId>dta</groupId>
+    			<artifactId>dao-memoire</artifactId>
+    			<version>1.0.0</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>dta</groupId>
+    			<artifactId>domain</artifactId>
+    			<version>1.0.0</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>dta</groupId>
+    			<artifactId>dao-api</artifactId>
+    			<version>1.0.0</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>dta</groupId>
+    			<artifactId>dao-fichier</artifactId>
+    			<version>1.0.0</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>dta</groupId>
+    			<artifactId>pizzeria-console</artifactId>
+    			<version>1.0.0</version>
+    		</dependency>
+    	</dependencies>
+    </dependencyManagement>
 </project>
