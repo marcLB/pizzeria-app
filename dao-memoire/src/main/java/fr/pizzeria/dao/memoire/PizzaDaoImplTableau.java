@@ -98,7 +98,10 @@ public class PizzaDaoImplTableau implements IPizzaDao{
  		return false;
  	}
 	
-	
+ 	@Override
+	public void importData() {
+		System.err.println("! Veuillez configurer l’application avec une implémentation base de données !");
+	}
 	
  	//GETTERS SETTERS
 	public List<Pizza> getListePizza() {
@@ -107,6 +110,10 @@ public class PizzaDaoImplTableau implements IPizzaDao{
 	public void setListePizza(List<Pizza> listePizza) {
 		this.listePizza = listePizza;
 	}
+
+
+
+	
 
 
 }

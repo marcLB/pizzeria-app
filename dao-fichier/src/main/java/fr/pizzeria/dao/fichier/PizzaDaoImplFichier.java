@@ -22,16 +22,10 @@ import fr.pizzeria.model.Client;
 import fr.pizzeria.model.Pizza;
 
 public class PizzaDaoImplFichier implements IPizzaDao{
-	protected String DATA_DIR;
-	
-	public PizzaDaoImplFichier(String dataDir) {
-		this.DATA_DIR=dataDir;
-	}
-	
 
 	@Override
 	public List<Pizza> findAllPizzas() {
-		try(Stream<Path> list = Files.list(Paths.get(DATA_DIR+"pizzas/"));){
+		try(Stream<Path> list = Files.list(Paths.get(DaoFichierFactory.getDataDir()+"pizzas/"));){
 			return list
 					.map(path -> {
 					String code = path.toFile().getName().replaceAll(".txt", "");
@@ -57,7 +51,7 @@ public class PizzaDaoImplFichier implements IPizzaDao{
 
 	@Override
 	public boolean saveNewPizza(Pizza pizza) throws SavePizzaException {
-		File pizzaFile=new File(DATA_DIR+"pizzas/"+pizza.getCode()+".txt"); 
+		File pizzaFile=new File(DaoFichierFactory.getDataDir()+"pizzas/"+pizza.getCode()+".txt"); 
 		try {
 			pizzaFile.createNewFile();
 			FileWriter fileW=new FileWriter(pizzaFile);
@@ -83,7 +77,7 @@ public class PizzaDaoImplFichier implements IPizzaDao{
 	@Override
 	public boolean deletePizza(String codePizza) throws DeletePizzaException {
 				
-		        File file = new File(DATA_DIR+codePizza+".txt");
+		        File file = new File(DaoFichierFactory.getDataDir()+codePizza+".txt");
 		        if (file.exists() && file.canWrite()) {
 		        	file.delete();
 		        	file.deleteOnExit();
@@ -94,7 +88,7 @@ public class PizzaDaoImplFichier implements IPizzaDao{
 	@Override
 	public List<Client> findAllClients() {
 		
-		try(Stream<Path> list = Files.list(Paths.get(DATA_DIR+"clients/"));){
+		try(Stream<Path> list = Files.list(Paths.get(DaoFichierFactory.getDataDir()+"clients/"));){
 			return list
 					.map(path -> {
 					String code = path.toFile().getName().replaceAll(".txt", "");
@@ -117,7 +111,7 @@ public class PizzaDaoImplFichier implements IPizzaDao{
 
 	@Override
 	public boolean saveNewClient(Client client) {
-		File pizzaFile=new File(DATA_DIR+"clients/"+client.getNom()+" "+client.getPrenom()+".txt"); 
+		File pizzaFile=new File(DaoFichierFactory.getDataDir()+"clients/"+client.getNom()+" "+client.getPrenom()+".txt"); 
 		try {
 			pizzaFile.createNewFile();
 			FileWriter fileW=new FileWriter(pizzaFile);
@@ -132,5 +126,12 @@ public class PizzaDaoImplFichier implements IPizzaDao{
 			throw new SavePizzaException("probleme à l'enregistrement");
 		}
 		return false;
+	}
+
+
+	
+	@Override
+	public void importData() {
+		System.err.println("! Veuillez configurer l’application avec une implémentation base de données !");
 	}
 }

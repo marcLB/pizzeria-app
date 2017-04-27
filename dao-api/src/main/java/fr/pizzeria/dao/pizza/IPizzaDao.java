@@ -17,5 +17,6 @@ public interface IPizzaDao {
 		
 		List<Client> findAllClients();
 		boolean saveNewClient(Client client);
+		void importData();
 		
 }

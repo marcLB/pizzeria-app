@@ -7,6 +7,35 @@
     <artifactId>pizzeria-app</artifactId>
     <version>1.0.0</version>
   </parent>
+  	<profiles>
+		<profile>
+		    <id>BDD</id>
+		    <activation>
+		        <activeByDefault>true</activeByDefault>
+		    </activation>
+		    <properties>
+		        <dao>fr.pizzeria.dao.jdbc.DaoJDBCFactory</dao>
+		    </properties>
+		</profile>
+		<profile>
+		    <id>dev</id>
+		    <activation>
+		        <activeByDefault>false</activeByDefault>
+		    </activation>
+		    <properties>
+		        <dao>fr.pizzeria.dao.fichier.DaoFichierFactory</dao>
+		    </properties>
+		</profile>
+		<profile>
+		    <id>prod</id>
+		    <activation>
+		        <activeByDefault>false</activeByDefault>
+		    </activation>
+		    <properties>
+		        <dao>fr.pizzeria.dao.memoire.DaoMemoireFactory</dao>
+		    </properties>
+		</profile>
+	</profiles>
   <build>
 		<pluginManagement>
 			<plugins>
@@ -58,5 +87,15 @@
     	<artifactId>dao-fichier</artifactId>
     	<version>1.0.0</version>
     </dependency>
+    <dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>5.1.41</version>
+</dependency>
+<dependency>
+	<groupId>dta</groupId>
+	<artifactId>pizzeria-dao-jdbc</artifactId>
+	<version>1.0.0</version>
+</dependency>
   </dependencies>
 </project>

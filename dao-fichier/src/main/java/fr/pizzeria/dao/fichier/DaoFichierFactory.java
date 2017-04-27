@@ -7,10 +7,14 @@ import fr.pizzeria.dao.fichier.PizzaDaoImplFichier;
 public class DaoFichierFactory implements DaoFactory{
 
 	private static final String DATA_DIR = "../data/";
-	private IPizzaDao pizzaDao = new PizzaDaoImplFichier(DATA_DIR);
+	private IPizzaDao pizzaDao = new PizzaDaoImplFichier();
 	
 	@Override
 	public IPizzaDao getPizzaDao() {
 		return pizzaDao;
+	}
+
+	public static String getDataDir() {
+		return DATA_DIR;
 	}
 }

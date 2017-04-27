@@ -37,7 +37,9 @@ public class Menu {
 //		listeOptions.put(8,new DebiterClientOptionMenu());
 //		listeOptions.put(9,new ListerLivreurOptionMenu());
 //		listeOptions.put(10,new AfficherStatsCompteOptionMenu());
+		listeOptions.put(8,new ImporterDonneesOptionMenu(pizzaDaoMenu));
 	}
+	
 	
 	public void afficher(){
 		System.out.println(titre);
