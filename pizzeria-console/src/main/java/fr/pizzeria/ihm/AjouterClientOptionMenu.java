@@ -28,9 +28,9 @@ public class AjouterClientOptionMenu extends OptionMenu {
 		Scanner scan3=new Scanner(System.in);
 		double solde= scan3.nextDouble();
 		
-		Client nouveauClient=new Client(pizzaDao.findAllClients().size(),nom,prenom,solde);
+		//Client nouveauClient=new Client(pizzaDao.findAllClients().size(),nom,prenom);
 		
-		this.pizzaDao.saveNewClient(nouveauClient);
+		//this.pizzaDao.saveNewClient(nouveauClient);
 		
 		return false;
 	}

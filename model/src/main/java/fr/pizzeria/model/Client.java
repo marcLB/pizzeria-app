@@ -1,22 +1,46 @@
 package fr.pizzeria.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="clients")
 public class Client {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	@Column(name="NOM")
 	private String nom;
+	@Column(name="PRENOM")
 	private String prenom;
-	private double solde;
+	@Column(name="EMAIL")
+	private String email;
+	@Column(name="MOT_DE_PASSE")
+	private int mot_de_passe;
+	
 	
 	
 	//CONSTRUCT
-	public Client(int id,String nom,String prenom,double solde){
-		this.id=id;
+	
+	public Client(){
+		
+	}
+	
+	public Client(String nom,String prenom,String email,int mot_de_passe){
 		this.nom=nom;
 		this.prenom=prenom;
-		this.solde=solde;
+		this.setEmail(email);
+		this.setMot_de_passe(mot_de_passe);
 	}
 	
 	
 	//METHODES
+	
+/*
 	public void crediterCompte(double montant){
 		this.solde+=montant;
 		
@@ -36,6 +60,8 @@ public class Client {
 	public String toString(){
 		return id+" -> "+prenom+" "+nom+" ("+solde+"€ )";
 	}
+*/	
+	
 	
 	// GETTERS SETTERS
 	public int getId() {
@@ -56,10 +82,30 @@ public class Client {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	public double getSolde() {
-		return solde;
+//	public double getSolde() {
+//		return solde;
+//	}
+//	public void setSolde(double solde) {
+//		this.solde = solde;
+//	}
+
+
+	public String getEmail() {
+		return email;
 	}
-	public void setSolde(double solde) {
-		this.solde = solde;
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public int getMot_de_passe() {
+		return mot_de_passe;
+	}
+
+
+	public void setMot_de_passe(int mot_de_passe) {
+		this.mot_de_passe = mot_de_passe;
 	}
 }

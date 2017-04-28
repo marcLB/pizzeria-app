@@ -8,34 +8,13 @@
 		<artifactId>pizzeria-app</artifactId>
 		<version>1.0.0</version>
 	</parent>
+	<artifactId>pizzeria-console-client</artifactId>
+	<name>pizzeria-console-client</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 	<profiles>
-		<profile>
-			<id>BDD</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<properties>
-				<dao>fr.pizzeria.dao.jdbc.DaoJDBCFactory</dao>
-			</properties>
-		</profile>
-		<profile>
-			<id>dev</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<properties>
-				<dao>fr.pizzeria.dao.fichier.DaoFichierFactory</dao>
-			</properties>
-		</profile>
-		<profile>
-			<id>prod</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<properties>
-				<dao>fr.pizzeria.dao.memoire.DaoMemoireFactory</dao>
-			</properties>
-		</profile>
 		<profile>
 			<id>jpa</id>
 			<activation>
@@ -46,30 +25,6 @@
 			</properties>
 		</profile>
 	</profiles>
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<artifactId>maven-jar-plugin</artifactId>
-					<configuration>
-						<archive>
-							<manifest>
-								<mainClass>fr.pizzeria.console.PizzeriaAdminConsoleApp</mainClass>
-							</manifest>
-						</archive>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
-	<groupId>dta</groupId>
-	<artifactId>pizzeria-console</artifactId>
-	<version>1.0.0</version>
-	<name>pizzeria-console</name>
-	<url>http://maven.apache.org</url>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>

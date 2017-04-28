@@ -76,7 +76,7 @@ public class PizzaDaoImplJDBC implements IPizzaDao{
 		try {
 			maConnection.rollback();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			e.printStackTrace(); 
 		}
 		closeBDD();
 		return false;
@@ -141,7 +141,6 @@ public class PizzaDaoImplJDBC implements IPizzaDao{
 	}
 	@Override
 	public boolean saveNewClient(Client client) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
@@ -182,6 +181,4 @@ public class PizzaDaoImplJDBC implements IPizzaDao{
 		
 		closeBDD();
 	}
-	
-
 }

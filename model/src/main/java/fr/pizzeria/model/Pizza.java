@@ -1,19 +1,39 @@
 package fr.pizzeria.model;
 
 import java.lang.reflect.Field;
+import javax.persistence.*;
 
+
+@Entity
+@Table(name="pizzas")
 public class Pizza {
 	
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@ToString(toUppercase=true)
+	private String id;
+
+	
+	@Column(name="NOM")
 	@ToString(toUppercase=true)
 	private String nom;
+	
+	@Column(name="PRIX")
 	@ToString(toUppercase=true)
 	private double prix;
+	
+	@Column(name="CODE")
 	@ToString(toUppercase=true)
 	private String code;
 	
+	@Enumerated(EnumType.STRING)
+	@Column(name="CATEGORIE")
 	private CategoriePizza categoriePizza;
 	
+	public Pizza(){
+		
+	}
 	
 	public Pizza(String code, String nom, double prix,CategoriePizza categorierPizza) {
 		super();
@@ -76,6 +96,14 @@ public class Pizza {
 	}
 	public void setCategoriePizza(CategoriePizza categoriePizza) {
 		this.categoriePizza = categoriePizza;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
  
 }

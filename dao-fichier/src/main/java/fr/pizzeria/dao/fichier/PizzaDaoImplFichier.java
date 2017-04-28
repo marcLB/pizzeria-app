@@ -97,7 +97,8 @@ public class PizzaDaoImplFichier implements IPizzaDao{
 						.findFirst()
 						.orElseThrow(() -> new StockageException("fichier vide"))
 						.split(";");
-				return new Client(Integer.valueOf(valueTab[0]),valueTab[1],valueTab[2],Double.valueOf(valueTab[3]));
+				//return new Client(Integer.valueOf(valueTab[0]),valueTab[1],valueTab[2],Double.valueOf(valueTab[3]));
+				return new Client();
 				
 			}catch(IOException e){
 				throw new StockageException(e);
@@ -118,8 +119,8 @@ public class PizzaDaoImplFichier implements IPizzaDao{
 			fileW.write(
 					client.getId()+";"+
 					client.getNom()+";"+
-					client.getPrenom()+";"+
-					client.getSolde()
+					client.getPrenom()+";"
+					//client.getSolde()
 					); 
 			fileW.close(); 
 		} catch (IOException e) {
